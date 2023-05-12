@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
       bucket_name = 'sikoraaxd-bucket'
 
-      response = s3.get_object(Bucket='my-bucket', Key='dataset.rar')
+      response = s3.get_object(Bucket=bucket_name, Key='dataset.rar')
       with open('./dataset.rar', 'wb') as f:
           f.write(response['Body'].read())
       with zipfile.ZipFile('./dataset.rar', 'r') as zip_ref:
